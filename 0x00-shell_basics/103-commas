@@ -1,2 +1,2 @@
 #!/bin/bash
-for f in ./ ../ *; do [[ -d "$f" ]] && f="$f/"; arr+=("$f"); done; echo "${arr[*]}" | tr ' ' ','
+ls -A | LC_COLLATE=C sort -f | awk 'BEGIN{ORS=", "}{if(isdir($0)) {print $0 "/"} else {print $0}}' | sed 's/^/.\//; s/, $/\n/'
