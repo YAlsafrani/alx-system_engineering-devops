@@ -1,2 +1,2 @@
 #!/bin/bash
-printf ".:\n$(ls -la | sed -n '1,2p'; ls -lA)\n\n..:\n$(ls -la .. | sed -n '1,2p'; ls -lA ..)\n\n/boot:\n$(ls -la /boot | sed -n '1,2p'; ls -lA /boot)\n"
+ls -la "$(pwd)" "$(pwd)/.." /boot
