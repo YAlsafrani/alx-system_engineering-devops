@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -A1 | sort -k1,1 -t '_' | awk 'BEGIN{printf "./, ../, "}{printf $0", "}' | sed 's/, $//'
+for f in ./ ../ *; do [[ -d "$f" ]] && f="$f/"; arr+=("$f"); done; echo "${arr[*]}" | tr ' ' ','
