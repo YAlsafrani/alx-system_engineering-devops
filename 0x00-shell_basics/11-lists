@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$(ls -lA)$(ls -lA ..)$(ls -lA /boot)"
+printf ".:\n$(ls -lA)\n\n..:\n$(ls -lA ..)\n\n/boot:\n$(ls -lA /boot)\n"
